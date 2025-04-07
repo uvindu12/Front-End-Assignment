@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import { Eye, EyeOff } from 'lucide-react'
+import { Checkbox } from './ui/checkbox'
+import Link from 'next/link'
 
 export default function LoginPage()  {
 
@@ -69,31 +71,12 @@ export default function LoginPage()  {
     }
 
   return (
-    <div className= "flex min-h-screen bg-black">
-        <div className = "flex w-full flex-col justify-center p-8 md:w-1/2 lg:p-12">
+    <div className= "flex justify-center h-full bg-white  items-center ">
+        <div className = "flex w-full flex-col justify-center p-8 md:w-1/2 lg:p-12 bg-black rounded-3xl">
             <div className ="mb-8">
                 <div className ="flex items-center gap-2">
                     <div className ="flex h-10 w-10 items-center rounded-md bg-purple-600">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-white"
-                        >
-                            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
-                            <path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4" />
-                            <path d="M3 9h4" />
-                            <path d="M17 9h4" />
-                            <path d="M13 13v4" />
-                            <path d="M13 13h4" />
-                            <path d="M13 17h4" />
-                        </svg>
+                        <img src="/images/door.png" alt="" className="max-w-6 ml-2 "/>
                     </div>
                     <span className ="text-xl font-bold text-white">ROOM.ME</span>
                 </div>
@@ -146,15 +129,61 @@ export default function LoginPage()  {
                 </Button>
 
                 <Button 
-                    type =" button"
                     variant = "outline"
                     className = "flex h-12 w-full items-center justify-center gap-2 border-gray-700 bg-transparent text-white hover:bg-gray-800">
                         <img src="images/google.png" alt=""  className="max-w-5 mr-2"/>
                         Sign in with Google
                 </Button>
 
-                
+                <div className =" flex items-center justify-between">
+                    <div className =" flex items-center space-x-2">
+                        <Checkbox 
+                            id="remember"
+                            checked = {rememberMe}
+                            onCheckedChange = {(checked) => setRememberMe (checked === true)}
+                            className = "border-gray-600 data-[state = checked] : bg:purple-600"/>
+
+                            <label 
+                                htmlFor = "remember"
+                                className = "text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    Remember for 30 days
+                            </label>
+                    </div>
+                    <Link href ="#" className ="text-sm text-purple-500 hover:text-purple-400">
+                        Forgot password
+                    </Link>
+                </div>
+
+                <div className =" text-center text-sm text-gray-400">
+                    Doesn't have account? {" "}
+                    <Link href="#" className =" text-purple-500 hover:text-purple-400">
+                        Sign up
+                    </Link>
+                </div>
             </form>
+        </div>
+
+        <div className =" hidden lg:flex bg-black ">
+        <div className="flex flex-col justify-center px-2 text-white">
+          <div className="flex flex-col justify-center px-2 py-10 h-screen">
+            <img
+              src="/images/Image.jpg"
+              alt="Login"
+              className="rounded-3xl h-170 shadow-2xl shadow-black"
+            />
+            <div className = " absolute bg-black/40 p-15 rounded-2xl justify-center items-center w-125 h-170">
+                <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-5 w-112 h-50 left-5 backdrop-blur-sm">
+                    <blockquote className="text-xl font-small text-white absolute  top-3 left-5">
+                        "We love the screen sharing and whiteboarding features, which have improved our presentations. Room.me has
+                        become an essential tool for our team, allowing us to collaborate effectively. Highly recommended!"
+                        <div className ="mt-2 flex items-center space-x-2">
+                            <footer className="text-white text-lg">Sarah Markivoc - Project Manager</footer>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+          </div>
+        </div>
         </div>
     </div>
   )
