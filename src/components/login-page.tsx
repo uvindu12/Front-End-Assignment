@@ -90,7 +90,7 @@ export default function LoginPage()  {
     }
 
   return (
-    <div className= "flex justify-center h-full bg-white  items-center p-1">
+    <div className= "flex justify-center h-full bg-white  items-center p-5">
         <div className = "flex  justify-center p-2 bg-black rounded-3xl">
             <div className = "flex flex-col justify-center p-8  bg-black rounded-l-3xl">
                 <div className ="mb-8">
@@ -177,7 +177,7 @@ export default function LoginPage()  {
 
                     <div className =" text-center text-sm text-gray-400">
                         Doesn't have account? {" "}
-                        <Link href="#" className =" text-purple-500 hover:text-purple-400 ">
+                        <Link href="/signup" className =" text-purple-500 hover:text-purple-400 ">
                             Sign up
                         </Link>
                     </div>
