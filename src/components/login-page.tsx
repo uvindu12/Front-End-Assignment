@@ -71,8 +71,8 @@ export default function LoginPage()  {
     }
 
   return (
-    <div className= "flex justify-center h-full bg-white  items-center ">
-        <div className = "flex w-full flex-col justify-center p-8 md:w-1/2 lg:p-12 bg-black rounded-3xl">
+    <div className= "flex justify-center h-full bg-white  items-center w-screen mt-5">
+        <div className = "flex flex-col justify-center p-8 md:w-1/2 lg:p-12 bg-black rounded-l-3xl">
             <div className ="mb-8">
                 <div className ="flex items-center gap-2">
                     <div className ="flex h-10 w-10 items-center rounded-md bg-purple-600">
@@ -90,7 +90,7 @@ export default function LoginPage()  {
             </div>
 
             <form onSubmit={handleSubmit} className ="space-y-6">
-                {error && <div className ="rounded-xl bg-red-500/10 p-3 text-sm text-red-500">{error}</div>}
+                {error && <div className ="rounded-xl bg-red-500/10 p-3 text-sm text-red-500 ">{error}</div>}
 
                 <div className ="space-y-2">
                     <label htmlFor="email" className ="block text-sm font-medium text-white">
@@ -115,6 +115,7 @@ export default function LoginPage()  {
                             onChange= {(e) => setPassword(e . target.value)}
                             placeholder = "Enter Your Password"
                             className =" h-12 bg-gray-900 pr-10 text-white placeholder:text-gray-500"/>
+                            
                             <Button 
                                 type ="button"
                                 onClick= {togglePasswordVisibility}
@@ -161,19 +162,17 @@ export default function LoginPage()  {
                     </Link>
                 </div>
             </form>
-            
         </div>
-
-        <div>
-            <div className="flex flex-col justify-center text-white">
-                <div className="flex flex-col justify-center py-10 h-screen">
+        <div className="flex flex-col justify-center bg-black rounded-r-3xl h-170 items-center mt-0 ">
+            <div className="flex flex-col justify-center px-2 text-white">
+                <div className="flex flex-col justify-center px-2 py-10 h-screen relative">
                     <img
                     src="/images/Image.jpg"
                     alt="Login"
-                    className="rounded-3xl h-170 shadow-2xl shadow-black"
+                    className="rounded-3xl h-160 shadow-2xl shadow-black"
                     />
-                    <div className = " absolute bg-black/40 p-15 rounded-3xl justify-center items-center w-123 h-170">
-                        <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-5 w-112 h-50 left-5 backdrop-blur-sm">
+                    <div className = " absolute bg-black/40 p-15 rounded-3xl justify-center items-center w-120 h-170">
+                        <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-7 w-110 h-50 left-3 backdrop-blur-sm">
                             <blockquote className="text-xl font-small text-white absolute  top-3 left-5">
                                 "We love the screen sharing and whiteboarding features, which have improved our presentations. Room.me has
                                 become an essential tool for our team, allowing us to collaborate effectively. Highly recommended!"
