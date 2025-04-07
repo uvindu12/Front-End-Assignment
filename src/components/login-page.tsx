@@ -124,13 +124,13 @@ export default function LoginPage()  {
                     </div>
                 </div>
 
-                <Button type="submit" disabled={loading} className= "h-12 w-full bg-purple-600 text-white hover:bg-purple-700">
+                <Button type="submit" disabled={loading} className= "h-12 w-full bg-purple-600 text-white hover:bg-purple-300 hover:text-purple-900">
                     {loading ? " Signing in ..." : "Sign in"}
                 </Button>
 
                 <Button 
                     variant = "outline"
-                    className = "flex h-12 w-full items-center justify-center gap-2 border-gray-700 bg-transparent text-white hover:bg-gray-800">
+                    className = "flex h-12 w-full items-center justify-center gap-2 border-gray-700 bg-transparent text-white hover:bg-purple-300">
                         <img src="images/google.png" alt=""  className="max-w-5 mr-2"/>
                         Sign in with Google
                 </Button>
@@ -156,34 +156,36 @@ export default function LoginPage()  {
 
                 <div className =" text-center text-sm text-gray-400">
                     Doesn't have account? {" "}
-                    <Link href="#" className =" text-purple-500 hover:text-purple-400">
+                    <Link href="#" className =" text-purple-500 hover:text-purple-400 ">
                         Sign up
                     </Link>
                 </div>
             </form>
+            
         </div>
 
-        <div className =" hidden lg:flex bg-black ">
-        <div className="flex flex-col justify-center px-2 text-white">
-          <div className="flex flex-col justify-center px-2 py-10 h-screen">
-            <img
-              src="/images/Image.jpg"
-              alt="Login"
-              className="rounded-3xl h-170 shadow-2xl shadow-black"
-            />
-            <div className = " absolute bg-black/40 p-15 rounded-2xl justify-center items-center w-125 h-170">
-                <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-5 w-112 h-50 left-5 backdrop-blur-sm">
-                    <blockquote className="text-xl font-small text-white absolute  top-3 left-5">
-                        "We love the screen sharing and whiteboarding features, which have improved our presentations. Room.me has
-                        become an essential tool for our team, allowing us to collaborate effectively. Highly recommended!"
-                        <div className ="mt-2 flex items-center space-x-2">
-                            <footer className="text-white text-lg">Sarah Markivoc - Project Manager</footer>
+        <div>
+            <div className="flex flex-col justify-center text-white">
+                <div className="flex flex-col justify-center py-10 h-screen">
+                    <img
+                    src="/images/Image.jpg"
+                    alt="Login"
+                    className="rounded-3xl h-170 shadow-2xl shadow-black"
+                    />
+                    <div className = " absolute bg-black/40 p-15 rounded-3xl justify-center items-center w-123 h-170">
+                        <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-5 w-112 h-50 left-5 backdrop-blur-sm">
+                            <blockquote className="text-xl font-small text-white absolute  top-3 left-5">
+                                "We love the screen sharing and whiteboarding features, which have improved our presentations. Room.me has
+                                become an essential tool for our team, allowing us to collaborate effectively. Highly recommended!"
+                                <div className ="mt-2 flex items-center space-x-2">
+                                    <footer className="text-white text-lg">Sarah Markivoc - Project Manager</footer>
+                                </div>
+                            </blockquote>
                         </div>
-                    </blockquote>
+                    </div>
                 </div>
+                
             </div>
-          </div>
-        </div>
         </div>
     </div>
   )
