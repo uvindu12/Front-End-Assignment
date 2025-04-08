@@ -192,7 +192,7 @@ export default function LoginPage()  {
                         className="rounded-3xl h-160 shadow-2xl shadow-black"
                         />
                         <div className = " absolute bg-black/40 p-15 rounded-3xl justify-center items-center w-120 h-170">
-                            <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-7 w-110 h-50 left-3 backdrop-blur-sm">
+                            <div className =" absolute bg-white/15 p-15 rounded-2xl justify-center items-center bottom-15 w-110 h-50 left-3 backdrop-blur-sm">
                                 <blockquote className="text-xl font-small text-white absolute  top-3 left-3">
                                     "We love the screen sharing and whiteboarding features, which have improved our presentations. Room.me has
                                     become an essential tool for our team, allowing us to collaborate effectively. Highly recommended!"
@@ -203,7 +203,18 @@ export default function LoginPage()  {
                             </div>
                         </div>
                     </div>
-                    
+                        {/* Animated dots at the bottom */}
+                    <div className="absolute bottom-15 left-170 right-0 flex justify-center  items-center gap-2">
+                        {[...Array(5)].map((_, i) => (
+                        <div
+                            key={i}
+                            className={`h-1 w-18 rounded-3xl animate-pulse-sequential ${
+                                i === 0 ? 'bg-purple-400' : 'bg-white/30'
+                              }`}
+                            style={{ animationDelay: `${i * 0.2}s` }}
+                        ></div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
